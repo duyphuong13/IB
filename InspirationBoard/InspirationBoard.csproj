@@ -318,7 +318,6 @@
     <Content Include="Scripts\InspirationBoard\jquery.placeholder.min.js" />
     <Content Include="Scripts\InspirationBoard\Modules\createBoardModal.js" />
     <Content Include="Scripts\InspirationBoard\Modules\myBoardList.js" />
-    <Content Include="Scripts\InspirationBoard\Modules\tasklist.js" />
     <Content Include="Scripts\InspirationBoard\wire.js" />
     <Content Include="Scripts\InspirationBoard\wireIB - Copy.js" />
     <Content Include="Scripts\InspirationBoard\updateBoard.js" />
@@ -396,9 +395,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Scripts\InspirationBoard\Modules\file1.js" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201507201500069_init.resx">

@@ -5,10 +5,6 @@ IB.modules.myboard = IB.modules.myboard || {};
 
 IB.modules.myboard.CreateBoardModal = (function () {
 
-    /*private variables*/
-    /*
-     * The _private variable contain main data using for binding
-     */
     var _private = {
         container: "#modal_createNewBoard",
         boardStructureTemplate: {
@@ -29,11 +25,6 @@ IB.modules.myboard.CreateBoardModal = (function () {
     var SubmitCallback = function () {
 
     };
-    ///*Event*/
-    //var _event = {
-    //    OnClickChooseUser: $.tms.NewID()
-    //};
-
     /*private functions*/
     function ApplyBinding() {
         /*Check if the container have been initialised*/
@@ -41,13 +32,7 @@ IB.modules.myboard.CreateBoardModal = (function () {
             if (ko.dataFor($(_private.container)[0]) == null || typeof (ko.dataFor($(_private.container)[0])) == typeof (undefined)) {
                 _model.SaveCreateBoard = SaveCreateBoard;
 
-                ///*Auto add x button to duedate for remove date functionality
-                //  Because x button just implemented for showing when user 
-                //  input data but datepicker do not allow user to input data
-                //  */
-                //_model.duedate.subscribe(function () {
-                //    $('input[data-bind*=duedate]', _private.container).addClass('x');
-                //}, _model);
+            
                 ko.applyBindings(_model, $(_private.container)[0]);
             }
         }
@@ -107,7 +92,6 @@ IB.modules.myboard.CreateBoardModal = (function () {
                 processData: false,
                 contentType: "application/json; charset=utf-8",
                 success: function (data) {
-                    debugger;
                     HideModal();
                     SubmitCallback();
                 },
@@ -133,24 +117,17 @@ IB.modules.myboard.CreateBoardModal = (function () {
      *         - container: jquery dom of ui
      */
     function CreateBoardModal(params) {
-        /* Do need to initial manually because we have the custom binding for this one already
-        $("#tms-create-task-duedate").datepicker();
-        */
+       
     };
 
     /*publically accessible variables and functions*/
     CreateBoardModal.prototype.Show = function () {
 
         InitialLoad(function () {
-            /*BootstrapModalInit*/
             BootstrapModalInit();
-            /*Data binding*/
             ApplyBinding();
-            /*Clear data*/
             ClearData();
-            /*Show Modal*/
             ShowModal();
-            /*Focus to Subject textbox*/
             setTimeout(function () {
                 $('input[data-bind*=title]').focus();
             }, 800);

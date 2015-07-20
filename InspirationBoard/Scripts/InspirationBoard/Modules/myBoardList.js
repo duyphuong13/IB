@@ -80,7 +80,7 @@ IB.modules.myboard.BoardList = (function () {
     }
 
     /* Constructor
-     * params: object contain all parameter pass for TaskList module
+     * params: object contain all parameter pass for module
      *         - container: jquery dom of ui
      */
     function BoardList(params) {
