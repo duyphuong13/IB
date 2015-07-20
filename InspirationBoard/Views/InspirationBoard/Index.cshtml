@@ -1,0 +1,224 @@
+﻿@{
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    ViewBag.Title = "Home Page";
+
+}
+
+@section styles{
+    <link href="~/Content/InspirationBoard/inspiration-boards.css" rel="stylesheet" />
+<link href="~/Content/jquery.fileupload.css" rel="stylesheet" />
+    <style type="text/css" media="print">
+        body div {
+            display: none !important;
+        }
+
+        #ib-preview-print {
+            width: 750px;
+            text-align: center;
+            display: block;
+        }
+
+            #ib-preview-print img {
+                width: 750px;
+                height: 750px;
+            }
+    </style>
+
+}
+
+<div style="clear:both"></div>
+<table width="100%" border="0" style="margin:0px; padding:0px;" id="ww-canvas-body-table">
+    <tr>
+
+        <td valign="top" id="ww-canvas-body-table-column1">
+
+            <div class="breadCrumbNav"><a href="/wedding/UserHome">My Wedding</a> <i class="icon-angle-right"></i> <a href="/wedding/UserMyInspirationBoard">Inspiration Boards</a></div>
+            <div id="ib-header"><span class="tool-main-heading bigText">Inspiration Board: <span id="ib-name" class="strong">ttt</span></span> <a href="#" onclick="WW.IB.dialogEdit.dialog('open')">Edit</a></div>
+
+            <div id="ib-nav" class="gallery">
+                <div id="ib-nav-bar" class="ui-tabs">
+                    <ul class="tabnav ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+                        <div id="photo-add" class="strong">Add Photos from:</div>
+                        <li id="tab1s" class="ib-nav-gallery selected ui-state-default ui-corner-top ui-tabs-active ui-state-active ui-state-focus"><a class="ui-tabs-anchor" href="#">PHOTO GALLERY</a></li>
+                        <li id="tab1u" class="ib-nav-gallery unselected ib-photo-strip-update ui-state-default ui-corner-top"><a class="ui-tabs-anchor" href="#" onclick="$j('#ib-nav').removeClass('my').addClass('gallery');">PHOTO GALLERY</a></li>
+                        <li id="tab2s" class="ib-nav-my selected ui-state-default ui-corner-top ui-tabs-active ui-state-active ui-state-focus"><a href="#">MY BOARD PHOTOS</a></li>
+                        <li id="tab2u" class="ib-nav-my unselected ib-photo-strip-update ui-state-default ui-corner-top"><a class="ui-tabs-anchor" href="#" onclick="$j('#ib-nav').removeClass('gallery').addClass('my');">MY BOARD PHOTOS</a></li>
+                        <a id="photo-upload" href="#" @*onclick="WW.IB.dialogUpload.dialog('open')"*@><i class="icon-plus"></i>&nbsp;Upload Photo</a>
+                        <div id="ib-switch-boards"><a class="ib-actions" href="/wedding/UserMyInspirationBoard"><i class="icon-th"></i>&nbsp;Switch boards</a></div>
+                    </ul>
+                </div>
+
+                <div id="ib-photo-strip" class="ib-nav-sub loaded ib-gallery" data-page="0">
+                    <div class="ib-nav-sub-bar greyText">
+                        <div id="ib-photo-strip-header-gallery">
+                            Filter Photos by:
+                            <a href="#" class="ib-detail-tag-labels" data-shortname="Details" onclick="WW.IB.filterShow(this,'#ib-detail-tag-labels');">Details</a> &bull;
+                            <a href="#" class="ib-color-tag-labels" data-shortname="Colors" onclick="WW.IB.filterShow(this,'#ib-color-tag-labels');">Colors</a> &bull;
+                            <a href="#" class="ib-season-tag-labels" data-shortname="Seasons" onclick="WW.IB.filterShow(this,'#ib-season-tag-labels');">Seasons</a> &bull;
+                            <a href="#" class="ib-style-tag-labels" data-shortname="Styles" onclick="WW.IB.filterShow(this,'#ib-style-tag-labels');">Styles</a> &bull;
+                            <a href="#" class="ib-venue-tag-labels" data-shortname="Venues" onclick="WW.IB.filterShow(this,'#ib-venue-tag-labels');">Wedding Venues</a>
+                        </div>
+                        <div id="ib-photo-strip-header-my" class="used">
+                            View:
+                            <span class="ib-photo-my-used">Recently used photos</span>
+                            <a class="ib-photo-my-used ib-photo-strip-update" href="#" onclick="$j('#ib-photo-strip-header-my').removeClass('all').addClass('used');">Recently used photos</a>
+                            &bull;
+                            <span class="ib-photo-my-all">Photos from all my boards</span>
+                            <a class="ib-photo-my-all ib-photo-strip-update" href="#" onclick="$j('#ib-photo-strip-header-my').removeClass('used').addClass('all');">Photos from all my boards</a>
+                        </div>
+                        <div id="ib-photo-strip-header-count">Showing <span id="ib-photo-strip-countPage">0</span> of <span id="ib-photo-strip-countTotal">0</span> photos</div>
+                        <div class="clearfix">&nbsp;</div>
+                    </div>
+                    <div id="ib-photo-strip-loading" class="ib-photo-section-loading">
+
+                        <img src='~/Scripts/InspirationBoard/flowerLoad.gif' alt='FILTERING' /><span class="largeText">Loading photos...</span>
+                    </div>
+                    <div id="ib-photo-strip-images" class="ib-photo-section">
+                        <a id="ib-photo-strip-images-prev" class="arrow bigText"><i class="icon-angle-left"></i></a>
+                        <a id="ib-photo-strip-images-next" class="arrow bigText"><i class="icon-angle-right"></i></a>
+                        <div id="ib-photo-strip-images-imgs"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="ib-overall-controls" data-wedpublic="true" class="ready-false public-true" style="overflow:hidden">
+                <div id="ib-overall-controls-edit">
+                    <a class="btn-primary ui-button ui-widget ui-state-default ui-corner-all disabled" href="#" id="ib-overall-controls-save">Save Board</a>
+                    <span class="public-true">
+                        <a href="/wedding/UserViewBoards?wid=572285f331a98a9e&bid=fc2f901b883c40e3&newFlag=true" target="_blank" id="ib-overall-controls-preview">Preview</a>
+                        <a id="ib-overall-controls-preview-tooltip" href="#" data-tooltip="If this preview doesn't match what you see on your inspiration board, you probably didn't save your board.<br/>To preview the latest board, be sure to click the &quot;Save Board&quot; button."><i class="icon-question-sign"></i></a>
+                    </span>
+                    <span class="public-false">
+                        Preview
+                        <a href="#" id="ib-overall-controls-preview-private-tooltip" data-tooltip="Your settings are currently set to &quot;Private&quot; so this <a href=&quot;http://weddingsupport.weddingwire.com/articles/Knowledge_Wedding/Why-is-my-inspiration-board-not-showing-on-my-profile&quot; target=&quot;_blank&quot;>option has been disabled</a>."><i class="icon-question-sign"></i></a>
+                    </span>
+                </div>
+            </div>
+
+            <div data-bid="fc2f901b883c40e3"
+                 data-codes="&lt;div style=&#039;width:$sizepx;text-align: center;margin: 0 auto;&#039;&gt;&lt;div&gt;&lt;a href=&#039;http://www.weddingwire.com/wedding/UserViewBoards?wid=572285f331a98a9e&amp;bid=$bid&#039;&gt;&lt;img src=&#039;$image&#039;/&gt;&lt;/a&gt;&lt;/div&gt;Photos by: $vendorLinks&lt;/div&gt;"
+                 data-image='{"220":"http://wwcdn.weddingwire.com/static/8.4.91/images/wedding/inspirationboardNew/iboard-new-empty.jpg","400":"","600":"","750":""}'
+                 id="ib-main-container">
+                <div id="ib-main">
+                    <div id="ib-container">
+                        <div id="ib-cell-root">
+                            &nbsp;
+                        </div>
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+                </div>
+            </div>
+
+            <div id="ib-back-link">
+                <a href="/wedding/UserMyInspirationBoard" class="strong">&laquo; Back to my inspiration boards</a>
+            </div>
+            @* Upload photo dialog *@
+            @*<div id="ib-dialog-upload">
+                    <div class="bd">
+                        <form id="ib-dialog-upload-form" action="/wedding/UploadImage" method="post" enctype="multipart/form-data">
+                            <div id="ib-dialog-upload_err" style="display:none"></div>
+                            <div id="ib-dialog-upload-header">Please select a photo to upload (jpg, jpeg, gif, png).</div>
+                            <div class="ib-new-dialog-col1 strong"><label for="imagefile1">Photo:</label></div>
+                            <div class="ib-new-dialog-col2"><input type="file" name="image(1)" value="" id="imagefile1"></div>
+                            <div id="ib-new-dialog-buttons">
+                                <input type="button" class="btn-primary ui-button ui-widget ui-state-default ui-corner-all" onclick="$j(this).closest('form').submit()" value="Submit" />
+                                <input type="button" onclick="WW.IB.dialogUpload.dialog('close')" class="btn-link ui-button ui-widget ui-state-default ui-corner-all" value="Cancel" />
+                            </div>
+                        </form>
+                    </div>
+                </div>*@
+            @* EDIT DIALOG *@
+            @*<div id="ib-dialog-edit">
+                    <div class="bd">
+                        <form id="ib-dialog-edit-form" data-bid="fc2f901b883c40e3">
+                            <div id="ib-dialog-edit_err" style="display:none"></div>
+                            <div class="ib-new-dialog-col1 strong"><label for="ib-dialog-edit-name">Name:</label></div>
+                            <div class="ib-new-dialog-col2"><input type="text" data-default="ttt" id="ib-dialog-edit-name" name="name" maxlength="50" style="width:240px" /></div>
+                            <div class="ib-new-dialog-col1 strong"><label for="ib-dialog-edit-description">Comments:</label></div>
+                            <div class="ib-new-dialog-col2">
+                                <textarea data-default="ttt" id="ib-dialog-edit-description" name="description" rows="4" style="width:240px"></textarea>
+                                <br />
+                                <input type="checkbox" id="ib-dialog-edit-publicFlag" name="publicFlag" data-default="true" /> <label class="strong" for="ib-dialog-edit-publicFlag">Show on Profile</label> [<a href="#" class="tooltipShowOnProfile" data-tooltip="Please note, by making your Inspiration Board private,<br/>you will not be able to share your board via Facebook, Twitter, or embed code.">?</a>]
+                            </div>
+                            <div id="ib-new-dialog-buttons">
+                                <input type="button" class="btn-primary ui-button ui-widget ui-state-default ui-corner-all" onclick="$j(this).closest('form').submit()" value="Submit" />
+                                <input type="button" onclick="WW.IB.dialogEdit.dialog('close');" class="btn-link ui-button ui-widget ui-state-default ui-corner-all" value="Cancel" />
+                            </div>
+                        </form>
+                    </div>
+                </div>*@
+
+
+        </td>
+
+    </tr>
+</table>
+
+@Html.Partial("~/Views/UploadFile/UploadImagePartial.cshtml")
+
+
+@section scripts{
+    <script>
+        var $dlgLoadingPanel;
+        var dialogLoadingPanelInitCallback = null;
+        var dialogLoadingPanelCloseCallback = null;
+        $j(function () {
+            $dlgLoadingPanel = $j("#dialogLoadingPanelWW").dialog({
+                width: 500
+            });
+            if (dialogLoadingPanelInitCallback != null) {
+                dialogLoadingPanelInitCallback();
+            }
+        });
+        var showDialogLoadingPanel = function (str) {
+            $j("#dialogLoadingPanelBody").html(str);
+            $dlgLoadingPanel.dialog("open");
+        };
+        var hideDialogLoadingPanel = function () {
+            $dlgLoadingPanel.dialog("close");
+        };
+        var setDialogLoadingPanelInitCallback = function (func) {
+            dialogLoadingPanelInitCallback = func;
+        };
+        var setDialogLoadingPanelCloseCallback = function (func) {
+            dialogLoadingPanelCloseCallback = func;
+            $dlgLoadingPanel.dialog({
+                beforeClose: function (event, ui) {
+                    func();
+                }
+            })
+        };
+        var setDialogLoadingPanelWidth = function (width) {
+            $dlgLoadingPanel.dialog("option", "width", width);
+        };
+    </script>
+    <script src="~/Scripts/InspirationBoard/InspirationBoardNew.js"></script>
+    <script src="~/Scripts/InspirationBoard/jquery.imgpreload.js"></script>
+    <script src="~/Scripts/InspirationBoard/jquery.json-2.3.min.js"></script>
+    <script src="~/Scripts/InspirationBoard/wireIB.js"></script>
+    <script src="~/Scripts/jquery.fileupload.js"></script>
+    <script type="text/javascript">
+
+        $j(document).ready(function () {
+            WW.IB.initEdit({ "height": 750, "width": 750, "type": "VSPLIT", "children": [{ "height": 750, "width": 246, "type": "HSPLIT", "children": [{ "height": 372, "width": 246, "type": "EMPTY" }, { "height": 372, "width": 246, "type": "HSPLIT", "children": [{ "height": 183, "width": 246, "type": "EMPTY" }, { "height": 183, "width": 246, "type": "EMPTY" }] }] }, { "height": 750, "width": 498, "type": "VSPLIT", "children": [{ "height": 750, "width": 246, "type": "HSPLIT", "children": [{ "height": 372, "width": 246, "type": "EMPTY" }, { "height": 372, "width": 246, "type": "EMPTY" }] }, { "height": 750, "width": 246, "type": "HSPLIT", "children": [{ "height": 372, "width": 246, "type": "HSPLIT", "children": [{ "height": 183, "width": 246, "type": "EMPTY" }, { "height": 183, "width": 246, "type": "EMPTY" }] }, { "height": 372, "width": 246, "type": "EMPTY" }] }] }] });
+
+            $j('#fileupload').fileupload({
+                dataType: 'json',
+                url: '/File/UploadFiles',
+                autoUpload: true,
+                done: function (e, data) {
+                    $j('.file_name').html(data.result.name);
+                    $j('.file_type').html(data.result.type);
+                    $j('.file_size').html(data.result.size);
+                }
+            }).on('fileuploadprogressall', function (e, data) {
+                var progress = parseInt(data.loaded / data.total * 100, 10);
+                $j('.progress .progress-bar').css('width', progress + '%');
+            });
+
+            $j("#photo-upload").click(function () {
+                $j('#modal_uploadImage').modal('show');
+            });
+        });
+    </script>
+}

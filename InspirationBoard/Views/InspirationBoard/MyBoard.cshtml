@@ -1,0 +1,126 @@
+﻿@{
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    ViewBag.Title = "Home Page";
+
+}
+
+@section styles{
+    <link href="~/Content/InspirationBoard/inspiration-boards.css" rel="stylesheet" />
+    <link href="~/Content/jquery.fileupload.css" rel="stylesheet" />
+    <link href="~/Content/InspirationBoard/new/myboard.css" rel="stylesheet" />
+    <style type="text/css" media="print">
+        body div {
+            display: none !important;
+        }
+
+        #ib-preview-print {
+            width: 750px;
+            text-align: center;
+            display: block;
+        }
+
+            #ib-preview-print img {
+                width: 750px;
+                height: 750px;
+            }
+    </style>
+
+}
+
+<div style="clear:both"></div>
+<table width="100%" border="0" style="margin:0px; padding:0px;" id="ww-canvas-body-table">
+    <tr>
+
+        <td valign="top" id="ww-canvas-body-table-column1">
+
+            <div class="breadCrumbNav"><a href="#">My Wedding</a> <i class="icon-angle-right"></i> <a href="#">Inspiration Boards</a></div>
+            <div class="ib-header"><span class="tool-main-heading bigText">My Inspiration Board </span> </div>
+            <div id="ib-create-new-board-box"><a href="#" class="strong iboardAddLink" id="ib-create-new-board" data-bind="click: onCreateBoardClick"><i class="icon-plus"></i> Create New Board</a></div>
+            <div id="ib-grid-board">
+
+                <ul data-bind="foreach: listboards">
+                    <li style="float:left; margin-right:20px">
+                        <div class="board">
+                            <a data-bind="attr: { href: Href }" title="" style="overflow:hidden">
+                                <img class="boardItem" data-bind="attr : {src : BoardImageUrl }, event: { onerror: OnError }">
+                                <div class="strong" style="text-align:center; font-weight:bold" data-bind="text: Title">
+                                </div>
+                            </a>
+                            @*<div id="ib-overall-controls-sharing-overview" class="smallText ready-false public-true" style="font-size: 11px;">
+                                    <a class="edit" href="#">edit</a>
+                                    • <a class="delete" href="#">delete</a>
+                                </div>*@
+                        </div>
+                    </li>
+                </ul>
+                <div class="clearfix" style="text-align:center">
+                    <div class="showMoreGroup" data-bind="visible: isLoading()">
+                        <img src="~/Content/InspirationBoard/loading.gif" />
+                    </div>
+                    <div class="showMoreGroup">
+                        <button type="button" class="btn btn-primary" data-bind="click: ShowMore">Show more</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </td>
+
+    </tr>
+
+</table>
+<div class="clearfix"></div>
+
+<style type="text/css">
+    a, a:visited, a:active, .link-font, a:hover, a:focus {
+        color: #19b5bc;
+    }
+
+    img.boardItem {
+        background-image: url('/cdn/images/iboard-new-empty.jpg?w=200&h=200');
+        border: 1px solid #D2D3C3;
+        width: 200px;
+        height: 200px;
+    }
+
+        img.boardItem:hover {
+            border: 1px solid #68a54e;
+        }
+
+    .board {
+        margin-bottom: 20px;
+        overflow: hidden;
+        width: 200px;
+    }
+
+    .showMoreGroup {
+        margin-left: -90px;
+        clear: both;
+    }
+</style>
+@Html.Partial("~/Views/InspirationBoard/CreateNewBoardPartialView.cshtml")
+
+@section scripts{
+    <script src="~/Scripts/InspirationBoard/Modules/myBoardList.js"></script>
+    <script src="~/Scripts/InspirationBoard/Modules/createBoardModal.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var boardList = new IB.modules.myboard.BoardList();
+            var createBoard = new IB.modules.myboard.CreateBoardModal();
+
+            boardList.UpdateData(null);
+            boardList.OnCreateBoardClick(function () {
+                createBoard.Show();
+            });
+            createBoard.OnCreateSuccess(function () {
+                boardList.UpdateData(null);
+            })
+            $("input[name='template']").change(function (e) {
+                var template = "t" + $('input[name="template"]:checked').val();
+                console.log(template)
+                $("#ib-new-dialog-preview").removeAttr('class');
+                $("#ib-new-dialog-preview").addClass(template);
+            });
+        });
+    </script>
+}

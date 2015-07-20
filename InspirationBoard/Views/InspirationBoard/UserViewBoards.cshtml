@@ -1,0 +1,41 @@
+﻿@{
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    ViewBag.Title = "Home Page";
+    string imagePath = String.Format("/cdn/images/{0}.PNG", ViewBag.BoardId);
+}
+
+@section styles{
+    <link href="~/Content/InspirationBoard/new/ib.css" rel="stylesheet" />
+    <link href="~/Content/jquery.fileupload.css" rel="stylesheet" />
+}
+
+<div style="clear:both"></div>
+<table width="100%" border="0" style="margin:0px; padding:0px;" id="ww-canvas-body-table">
+    <tr>
+
+        <td valign="top" id="ww-canvas-body-table-column1">
+
+            <div class="breadCrumbNav"><a href="/InspirationBoard/MyBoard">My Board</a> <i class="icon-angle-right"></i> <a href="/InspirationBoard/MyBoard">Inspiration Boards</a></div>
+            <div class="ib-header"><span class="tool-main-heading bigText">Inspiration Board</div>
+
+
+            <div id="ib-overall-controls" data-wedpublic="true" class="ready-false public-true" style="overflow:hidden">
+                <div id="ib-overall-controls-edit">
+                    <a class="btn-primary ui-button ui-widget ui-state-default ui-corner-all" href="/InspirationBoard/UpdateBoard?id=@ViewBag.BoardId" id="ib-overall-controls-save">Edit Board</a>
+
+                </div>
+            </div>
+
+            <div id="ib-main-container" style="overflow:hidden; background-color:#fff">
+                <div id="ib-main">
+                    <div id="ib-container">
+                        <img src="@imagePath" />
+                    </div>
+                </div>
+            </div>
+
+
+        </td>
+
+    </tr>
+</table>

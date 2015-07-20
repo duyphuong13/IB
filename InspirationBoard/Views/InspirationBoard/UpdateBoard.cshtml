@@ -1,0 +1,157 @@
+﻿@{
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    ViewBag.Title = "Home Page";
+
+}
+
+@section styles{
+    <link href="~/Content/InspirationBoard/new/ib.css" rel="stylesheet" />
+    <link href="~/Content/jquery.fileupload.css" rel="stylesheet" />
+}
+
+<div style="clear:both"></div>
+<table width="100%" border="0" style="margin:0px; padding:0px;" id="ww-canvas-body-table">
+    <tr>
+
+        <td valign="top" id="ww-canvas-body-table-column1">
+
+            <div class="breadCrumbNav"><a href="/InspirationBoard/MyBoard">My Board</a> <i class="icon-angle-right"></i> <a href="/InspirationBoard/MyBoard">Inspiration Boards</a></div>
+            <div class="ib-header">
+                <span class="tool-main-heading bigText">Inspiration Board: <span id="ib-name" class="strong" data-bind="text : Title"></span></span>
+                <a href="#" data-bind="click: EditBoard"> <i class="icon-edit"></i> Edit</a>
+                <a href="#" data-bind="click: DeleteBoard "> <i class="icon-remove"></i>Delete</a>
+            </div>
+
+            <div id="ib-nav" class="gallery">
+                <div id="ib-nav-bar" class="ui-tabs">
+                    <ul class="tabnav ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+                        <div id="photo-add" class="strong">Add Photos from:</div>
+                        <li id="tab1s" class="ib-nav-gallery selected ui-state-default ui-corner-top ui-tabs-active ui-state-active ui-state-focus"><a class="ui-tabs-anchor" href="#">PHOTO GALLERY</a></li>
+                        <li id="tab1u" class="ib-nav-gallery unselected ib-photo-strip-update ui-state-default ui-corner-top"><a class="ui-tabs-anchor" href="#">PHOTO GALLERY</a></li>
+                        <li id="tab2s" class="ib-nav-my selected ui-state-default ui-corner-top ui-tabs-active ui-state-active ui-state-focus"><a href="#">MY BOARD PHOTOS</a></li>
+                        <li id="tab2u" class="ib-nav-my unselected ib-photo-strip-update ui-state-default ui-corner-top"><a class="ui-tabs-anchor" href="#">MY BOARD PHOTOS</a></li>
+                        <a id="photo-upload" href="#"><i class="icon-plus"></i>&nbsp;Upload Photo</a>
+                        <div id="ib-switch-boards"><a class="ib-actions" href="/InspirationBoard/MyBoard"><i class="icon-th"></i>&nbsp;Switch boards</a></div>
+                    </ul>
+                </div>
+
+                <div id="ib-photo-strip" class="ib-nav-sub loaded ib-gallery" data-page="0">
+                    <div class="ib-nav-sub-bar greyText">
+                        <div id="ib-photo-strip-header-gallery">
+                            Filter Photos by:
+                            <a href="#" class="ib-detail-tag-labels" data-shortname="Details">Details</a> &bull;
+                            <a href="#" class="ib-color-tag-labels" data-shortname="Colors">Colors</a> &bull;
+                            <a href="#" class="ib-season-tag-labels" data-shortname="Seasons">Seasons</a> &bull;
+                            <a href="#" class="ib-style-tag-labels" data-shortname="Styles">Styles</a> &bull;
+                            <a href="#" class="ib-venue-tag-labels" data-shortname="Venues">Wedding Venues</a>
+                        </div>
+                        <div id="ib-photo-strip-header-count">Showing <span id="ib-photo-strip-countPage">0</span> of <span id="ib-photo-strip-countTotal">0</span> photos</div>
+                        <div class="clearfix">&nbsp;</div>
+                    </div>
+                    <div id="ib-photo-strip-loading" class="ib-photo-section-loading">
+
+                        <img src='~/Scripts/InspirationBoard/flowerLoad.gif' alt='FILTERING' /><span class="largeText">Loading photos...</span>
+                    </div>
+                    <div id="ib-photo-strip-images" class="ib-photo-section">
+                        <a id="ib-photo-strip-images-prev" class="arrow bigText"><i class="icon-angle-left"></i></a>
+                        <a id="ib-photo-strip-images-next" class="arrow bigText"><i class="icon-angle-right"></i></a>
+                        <div id="ib-photo-strip-images-imgs"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="ib-overall-controls" data-wedpublic="true" class="ready-false public-true" style="overflow:hidden">
+               
+                <div id="ib-overall-controls-edit">
+                    <img data-bind="visible : IsUpdatingBoard" src="~/Content/InspirationBoard/loading.gif" />
+                    <a class="btn-primary ui-button ui-widget ui-state-default ui-corner-all disabled" href="#_" id="ib-overall-controls-save">Save Board</a>
+                    <span class="public-true">
+                        <a href="/InspirationBoard/UserViewBoards?id=@ViewBag.BoardId" target="_blank" id="ib-overall-controls-preview">Preview</a>
+                        <i class="icon-question-sign"></i>
+                    </span>
+                    <span class="public-false">
+                        Preview
+                        <i class="icon-question-sign"></i>
+                    </span>
+                </div>
+            </div>
+
+            <div id="ib-main-container">
+                <div id="ib-main">
+                    <div id="ib-container">
+                        <div id="ib-cell-root">
+                            &nbsp;
+                        </div>
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+                </div>
+            </div>
+
+            <div id="ib-back-link">
+                <a href="/InspirationBoard/MyBoard" class="strong">&laquo; Back to my inspiration boards</a>
+            </div>
+
+        </td>
+
+    </tr>
+</table>
+
+@Html.Partial("~/Views/UploadFile/UploadImagePartial.cshtml")
+@Html.Partial("~/Views/InspirationBoard/UpdateBoardPartialView.cshtml")
+
+@section scripts{
+    <script src="~/Scripts/InspirationBoard/jquery.imgpreload.js"></script>
+    <script src="~/Scripts/InspirationBoard/jquery.json-2.3.min.js"></script>
+
+    <!-- The Templates plugin is included to render the upload/download listings -->
+    <script src="//blueimp.github.io/JavaScript-Templates/js/tmpl.min.js"></script>
+    <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+    <script src="//blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
+    <!-- The Canvas to Blob plugin is included for image resizing functionality -->
+    <script src="//blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+    <!-- Bootstrap JS is not required, but included for the responsive demo navigation -->
+    <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+    <script src="~/Content/FileUpload/jquery.iframe-transport.js"></script>
+    <!-- The basic File Upload plugin -->
+    <script src="~/Content/FileUpload/jquery.fileupload.js"></script>
+    <!-- The File Upload processing plugin -->
+    <script src="~/Content/FileUpload/jquery.fileupload-process.js"></script>
+    <!-- The File Upload image preview & resize plugin -->
+    <script src="~/Content/FileUpload/jquery.fileupload-image.js"></script>
+    <!-- The File Upload validation plugin -->
+    <script src="~/Content/FileUpload/jquery.fileupload-validate.js"></script>
+    <!-- The File Upload user interface plugin -->
+    <script src="~/Content/FileUpload/jquery.fileupload-ui.js"></script>
+
+
+
+    <script src="~/Scripts/InspirationBoard/updateBoard.js"></script>
+
+
+    <script type="text/javascript">
+
+        var boardGuid = '@ViewBag.BoardId';
+        $(document).ready(function () {
+
+            var ib = new IB.modules.UpdateBoard();
+            ib.InitEdit();
+
+            $('#fileupload').fileupload();
+
+            $('#fileupload').fileupload('option', {
+                maxFileSize: 500000000,
+                resizeMaxWidth: 1920,
+                resizeMaxHeight: 1200
+            });
+
+            $("#photo-upload").click(function () {
+                $('#modal_uploadImage').modal('show');
+            });
+
+            $('#modal_uploadImage').on('hidden.bs.modal', function () {
+                $("table tbody.files").empty();
+                IB.UpdateImageStrip();
+            })
+        });
+    </script>
+}

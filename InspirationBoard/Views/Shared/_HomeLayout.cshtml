@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- BEGIN HEAD META INFO -->
+    <title>My Inspiration Board</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="/Content/InspirationBoard/font-reset-min.css">
+    <link rel="stylesheet" type="text/css" href="/Content/InspirationBoard/jquery.qtip.min.css">
+    <link href="/Content/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/InspirationBoard/jquery-ui-1.10.3.custom.css" rel="stylesheet" media="all" />
+
+    @*ww-header-top*@
+    <style type="text/css">
+        .ib-content, .site-width {
+            width: 1170px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .ib-header-top {
+            width: 100%;
+            height: 30px;
+            background-color: #b4b4b4;
+        }
+
+            .ib-header-top .left-side {
+                line-height: 30px;
+                float: left;
+                margin-left: 27px;
+                color: #fff;
+                font-size: 20px;
+            }
+
+                .ib-header-top .left-side a, .ib-header-top .left-side a:visited, .ib-header-top .left-side a:active {
+                    text-decoration: none;
+                    color: #eee;
+                }
+
+                    .ib-header-top .left-side a:hover, .ib-header-top .left-side a:visited:hover, .ib-header-top .left-side a:active:hover {
+                        color: #fff;
+                    }
+
+                .ib-header-top .left-side i {
+                    margin-left: 3px;
+                    margin-right: 3px;
+                }
+
+            .ib-header-top .right-side {
+                font-size: 13px;
+                line-height: 1.6em;
+                float: right;
+                line-height: 30px;
+                height: 30px;
+                margin-right: 30px;
+                color: #fff;
+            }
+
+                .ib-header-top .right-side .orangeText {
+                    color: #ffc790;
+                }
+
+                .ib-header-top .right-side a, .ib-header-top .right-side a:visited, .ib-header-top .right-side a:active {
+                    text-decoration: none;
+                    color: #fff;
+                }
+
+                    .ib-header-top .right-side a:hover, .ib-header-top .right-side a:visited:hover, .ib-header-top .right-side a:active:hover {
+                        color: #19b5bc;
+                    }
+
+                .ib-header-top .right-side span.sep {
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+
+                .ib-header-top .right-side #ww-my-account + span.sep {
+                    padding-left: 0;
+                }
+
+                .ib-header-top .right-side #ww-my-account {
+                    display: inline-block;
+                    margin: 0;
+                    position: relative;
+                    height: 30px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+
+                    .ib-header-top .right-side #ww-my-account img {
+                        vertical-align: middle;
+                        margin-top: -4px;
+                    }
+
+                    .ib-header-top .right-side #ww-my-account:hover {
+                        background-color: #fff;
+                    }
+
+                        .ib-header-top .right-side #ww-my-account:hover a, .ib-header-top .right-side #ww-my-account:hover a:visited, .ib-header-top .right-side #ww-my-account:hover a:active {
+                            color: #b4b4b4;
+                        }
+
+                        .ib-header-top .right-side #ww-my-account:hover .nav-dropdown {
+                            display: block;
+                        }
+
+                    .ib-header-top .right-side #ww-my-account .nav-dropdown {
+                        color: #333;
+                        background-color: #fff;
+                        text-align: left;
+                        display: none;
+                        position: absolute;
+                        z-index: 99999999;
+                        border-radius: 8px;
+                        padding: 18px;
+                        margin-left: -10px;
+                        -webkit-box-shadow: 0 14px 20px 5px rgba(0,0,0,0.3);
+                        -moz-box-shadow: 0 14px 20px 5px rgba(0,0,0,0.3);
+                        box-shadow: 0 14px 20px 5px rgba(0,0,0,0.3);
+                        -webkit-box-sizing: border-box;
+                        -moz-box-sizing: border-box;
+                        box-sizing: border-box;
+                    }
+
+                        .ib-header-top .right-side #ww-my-account .nav-dropdown a, .ib-header-top .right-side #ww-my-account .nav-dropdown a:visited, .ib-header-top .right-side #ww-my-account .nav-dropdown a:active {
+                            text-decoration: none;
+                            color: #333;
+                        }
+
+                            .ib-header-top .right-side #ww-my-account .nav-dropdown a:hover, .ib-header-top .right-side #ww-my-account .nav-dropdown a:visited:hover, .ib-header-top .right-side #ww-my-account .nav-dropdown a:active:hover {
+                                color: #19b5bc;
+                            }
+
+                        .ib-header-top .right-side #ww-my-account .nav-dropdown:hover {
+                            display: block;
+                        }
+
+                        .ib-header-top .right-side #ww-my-account .nav-dropdown.one-column {
+                            width: 180px;
+                        }
+
+                        .ib-header-top .right-side #ww-my-account .nav-dropdown ul li {
+                            height: 28px;
+                        }
+    </style>
+
+    @*breadCrumbNav*@
+    <style type="text/css">
+        .breadCrumbNav, .core-bread-crumb, .bread-crumb, .breadCrumbBar, .photo-breadcrumb {
+            color: #999;
+            font-size: 13px;
+            line-height: 1.6em;
+            font-weight: normal;
+        }
+
+            .breadCrumbNav a, .core-bread-crumb a, .bread-crumb a, .breadCrumbBar a, .photo-breadcrumb a {
+                color: #999;
+                font-size: 13px;
+                line-height: 1.6em;
+            }
+
+                .breadCrumbNav a:hover, .core-bread-crumb a:hover, .bread-crumb a:hover, .breadCrumbBar a:hover, .photo-breadcrumb a:hover {
+                    color: #19b5bc;
+                }
+
+            .breadCrumbNav .icon-angle-right, .breadCrumbNav .icon-angle-left, .core-bread-crumb .icon-angle-right, .core-bread-crumb .icon-angle-left, .bread-crumb .icon-angle-right, .bread-crumb .icon-angle-left, .breadCrumbBar .icon-angle-right, .breadCrumbBar .icon-angle-left, .photo-breadcrumb .icon-angle-right, .photo-breadcrumb .icon-angle-left {
+                margin: 0 5px;
+            }
+    </style>
+    <link href="~/Content/InspirationBoard/new/canvasbody.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/InspirationBoard/shared.css" rel="stylesheet" />
+    @RenderSection("styles", false)
+
+    <script src="~/Scripts/InspirationBoard/jquery-1.8.3.min.js"></script>
+    <script src="~/Scripts/knockout-3.2.0.js"></script>
+    <script src="~/Scripts/InspirationBoard/jquery-ui-1.10.2.custom.js"></script>
+    <script src="~/Scripts/InspirationBoard/jquery.placeholder.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <div>
+        <!-- BEGIN HEADER -->
+        <div class="ib-header-top">
+            <div id="ww-header-top-inner" class="wedding-user-logged-in-true">
+                <div class="left-side">
+                </div>
+                <div class="right-side">
+                    <span id="facebookLoggedInData" style="display:none;">
+                        <fb:profile-pic uid="100002402673907" size="square" facebook-logo="true" linked="false" width="16" height="16"></fb:profile-pic><!--[if IE]>&nbsp;<![endif]-->
+                        <fb:name uid="100002402673907" firstnameonly="true" useyou="false" linked="false" capitalize="true"></fb:name>
+                        <span class='sep'>&bull;</span>
+                    </span>
+                    <div id="ww-my-account">
+                        <img src="http://wwcdn.weddingwire.com/static/wedding/3555001_3560000/3558584/thumbnails/130x130_SQ_1415954335542-avatar.jpg" alt="Profile Picture" height="23" width="23" />
+                        <a id="main-nav-settings" href="#" title="My Account Settings">Phuong Nguyen</a>
+                        <div class="nav-dropdown one-column">
+                            <div class="section no-title">
+                                <ul>
+                                    <li><a id="my-account-my-dashboard" href="/wedding/UserHome" title="Online Wedding Planner">My Dashboard</a></li>
+                                    <li><a id="my-account-my-profile" href="/wedding/UserViewProfile" title="Wedding Profile">My Profile</a></li>
+                                    <li><a id="my-account-my-settings" href="/wedding/UserMyAccount" title="My Account Settings">My Settings</a></li>
+                                    <li><a id="my-account-my-wedding-website" href="/wedding/UserMyWebsitePages" title="Wedding Websites">My Wedding Website</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <span class='sep'>&bull;</span><a id="main-nav-write-a-review" href="/shared/Rate" title="Write a Review">Write A Review</a>
+                    <span class='sep'>&bull;</span><a id="main-nav-logout" href="/wedding/UserLogout" title="Logout">Logout</a>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+        <!-- END HEADER -->
+
+    </div>
+    <div class="ib-content">
+        @RenderBody()
+    </div>
+
+    <div style="width: 1170px;
+margin: 0 auto;
+text-align:right;
+padding: 0;">
+        <div>
+            Copy Right © -  Inspiration Board v 1.0
+        </div>
+    </div>
+
+</body>
+
+@RenderSection("scripts", false)
+</html>

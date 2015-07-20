@@ -1,0 +1,256 @@
+﻿#ib-nav-bar {
+    margin-top: 20px;
+}
+
+    #ib-nav-bar #photo-add, #ib-nav-bar #photo-upload {
+        float: left;
+        line-height: 43px;
+        margin-right: 15px;
+    }
+
+    #ib-nav-bar #photo-add {
+        color: #999;
+    }
+
+#ib-photo-strip .ib-nav-sub-bar #ib-photo-strip-header-gallery, #ib-photo-strip .ib-nav-sub-bar #ib-photo-strip-header-my {
+    float: left;
+}
+
+#ib-nav-bar #ib-switch-boards {
+    float: right;
+    line-height: 43px;
+}
+
+
+#ib-photo-strip #ib-photo-strip-images a.arrow {
+    font-weight: bold;
+    display: block;
+    padding: 6px 3px;
+    color: #ffac5a;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+}
+
+#ib-photo-strip #ib-photo-strip-images #ib-photo-strip-images-next, #ib-photo-strip #ib-photo-strip-images #ib-photo-strip-images-prev {
+    visibility: hidden;
+    font-size: 55px;
+    line-height: 52px;
+    cursor: pointer;
+}
+
+
+#ib-new-dialog-full, #W_Tools_Inspiration_New #at_email #at16meo, #ib-overall-controls-sharing .addthis_button_print, #ib-preview-print, #ib-boards .public-true .public-false, #ib-boards .public-false .public-true, #ib-boards .ready-true .ready-false, #ib-boards .ready-false .ready-true, #ib-overall-controls.ready-false.public-false .public-false, #ib-overall-controls.ready-true .ready-false, #ib-overall-controls.public-true .public-false, #ib-overall-controls.ready-false.public-true .ready-true, #ib-overall-controls.ready-false.public-false .ready-true, #ib-overall-controls.ready-true.public-true .public-false, #ib-overall-controls.ready-true.public-false .public-true, #ib-overall-controls.ready-true .public.ready-false, #ib-dialog-upload, #ib-dialog-edit, #ib-embed-dialog, #ib-edit-dialog, #ib-new-dialog, #ib-dialog-started, #ib-photo-strip.loaded #ib-photo-strip-loading, #ib-photo-strip.loading #ib-photo-strip-images, #ib-photo-strip.loading #ib-photo-strip-header-count, #ib-nav.my #ib-photo-strip-header-gallery, #ib-nav.gallery #ib-photo-strip-header-my, #ib-photo-strip-header-my.used span.ib-photo-my-all, #ib-photo-strip-header-my.used a.ib-photo-my-used, #ib-photo-strip-header-my.all a.ib-photo-my-all, #ib-photo-strip-header-my.all span.ib-photo-my-used, #ib-nav.my .ib-nav-gallery.selected, #ib-nav.my .ib-nav-my.unselected, #ib-nav.gallery .ib-nav-gallery.unselected, #ib-nav.gallery .ib-nav-my.selected {
+    display: none;
+}
+
+
+#ib-photo-strip .ib-nav-sub-bar {
+    font-size: 11px;
+    line-height: 1.4em;
+    color: #999;
+    line-height: 20px;
+}
+
+#ib-photo-strip-loading img {
+    width: 35px;
+    height: 35px;
+    padding-right: 10px;
+    vertical-align: middle;
+}
+
+#ib-photo-strip #ib-photo-strip-images {
+    margin-top: 10px;
+}
+
+    #ib-photo-strip #ib-photo-strip-images #ib-photo-strip-images-prev {
+        float: left;
+    }
+
+    #ib-photo-strip #ib-photo-strip-images #ib-photo-strip-images-next {
+        float: right;
+    }
+
+    #ib-photo-strip #ib-photo-strip-images #ib-photo-strip-images-imgs {
+        padding-left: 65px;
+        white-space: nowrap;
+    }
+
+ib-photo-strip .ib-nav-sub-bar #ib-photo-strip-header-count {
+    float: right;
+}
+
+.source-img {
+    width: 64px;
+    height: 64px;
+    margin: 0 5px;
+    z-index: 2;
+    cursor: move;
+}
+
+#ib-photo-preview {
+    position: absolute;
+    background-color: #CCC;
+    padding: 10px;
+    z-index: 2;
+}
+
+    #ib-photo-preview img {
+        width: 300px;
+    }
+
+#ib-photo-strip .ib-nav-sub-bar #ib-photo-strip-header-count {
+    float: right;
+}
+
+#ib-photo-strip-loading img {
+    width: 35px;
+    height: 35px;
+    padding-right: 10px;
+    vertical-align: middle;
+}
+
+
+#ib-overall-controls {
+    margin-top: 10px;
+    color: #ddd;
+    font-size: 14px;
+    line-height: 1.6em;
+}
+
+#ib-overall-controls, #ib-main-container {
+    border: 1px solid #ddd;
+}
+
+    #ib-overall-controls #ib-overall-controls-edit {
+        float: right;
+        padding: 5px 20px;
+    }
+
+        #ib-overall-controls #ib-overall-controls-edit .btn-primary {
+            padding: 8px 15px;
+            color: #fff;
+        }
+
+#ib-main-container {
+    border-top: none;
+    padding: 25px;
+    background-color: #eee;
+}
+
+#ib-main {
+    width: 750px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+    #ib-main #ib-container {
+        font-size: 13px;
+        line-height: 1.6em;
+        behavior: url(/localStatic/PIE.htc);
+        float: left;
+        height: auto;
+        width: auto;
+    }
+
+        #ib-main #ib-container .ib-cell {
+            float: left;
+            overflow: hidden;
+        }
+
+        #ib-main #ib-container .divider {
+            background: #CCC;
+            float: left;
+            overflow: hidden;
+        }
+
+        #ib-main #ib-container .msg {
+            margin: auto;
+            padding: 5px;
+            text-align: center;
+        }
+
+
+#ib-controls-hover-drag, #ib-controls-hover {
+    background: #666;
+    border: 1px solid #333;
+    filter: alpha(opacity=80);
+    -moz-opacity: .80;
+    opacity: .80;
+    display: none;
+    width: 24px;
+    position: absolute;
+}
+
+#ib-controls-hover-drag, #ib-controls-hover {
+    background: #666;
+    border: 1px solid #333;
+    filter: alpha(opacity=80);
+    -moz-opacity: .80;
+    opacity: .80;
+    display: none;
+    width: 24px;
+    position: absolute;
+}
+
+#ib-controls-hover-drag {
+    cursor: move;
+}
+
+#ib-controls {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+
+#ib-zoom-slider {
+    width: 150px;
+    margin: 10px auto;
+}
+
+#image_clone {
+    position: absolute;
+}
+
+element.style {
+    top: 385px;
+    left: 0px;
+    width: 299.5px;
+    height: 372px;
+    display: block;
+}
+
+.lightbox_bg {
+    background: #222 none repeat scroll 0 0;
+    height: 100%;
+    left: 0;
+    filter: alpha(opacity=80);
+    -moz-opacity: .80;
+    opacity: .80;
+    top: 0;
+    width: 100%;
+    position: absolute;
+    display: none;
+}
+
+#ib-controls .ui-button {
+    padding: 5px 20px;
+    margin-left: 10px;
+}
+
+#ib-controls-hover-drag img:hover, #ib-controls-hover img:hover {
+    background: #eee;
+}
+
+#ib-controls-hover-drag img, #ib-controls-hover img {
+    width: 16px;
+    height: 16px;
+    display: block;
+    /*padding: 4px;*/
+}
+
+#ib-controls-hover img {
+    cursor: pointer;
+}

@@ -1,0 +1,54 @@
+﻿#ib-new-dialog #ib-new-dialog-templates #ib-new-dialog-template1-label, #ib-edit-dialog #ib-new-dialog-templates #ib-new-dialog-template1-label, #ib-dialog-edit #ib-new-dialog-templates #ib-new-dialog-template1-label, #ib-dialog-upload #ib-new-dialog-templates #ib-new-dialog-template1-label {
+    background-position: right 0;
+}
+
+#ib-new-dialog #ib-new-dialog-templates #ib-new-dialog-template1-label {
+    background-position: 20px 0;
+}
+
+.ib-new-dialog-templates {
+    display: inline-block;
+    width: 65px;
+    height: 50px;
+    margin-right: 10px;
+    vertical-align: top;
+    background-image: url("/Content/InspirationBoard/template-layouts.png");
+    background-repeat: no-repeat;
+    text-align: left;
+    min-width: 65px;
+}
+
+
+.ib-new-dialog-templates {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    vertical-align: top;
+    background-image: url("/Content/InspirationBoard/template-layouts.png");
+    background-repeat: no-repeat;
+    background-position: right 0;
+}
+
+#ib-new-dialog-preview {
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    margin: 10px auto !important;
+    padding-bottom: 156px;
+    width: 156px;
+}
+
+    #ib-new-dialog-preview.t1 {
+        background-image: url("/Content/InspirationBoard/template1-preview.jpg");
+    }
+
+    #ib-new-dialog-preview.t2 {
+        background-image: url("/Content/InspirationBoard/template2-preview.jpg");
+    }
+
+    #ib-new-dialog-preview.t3 {
+        background-image: url("/Content/InspirationBoard/template3-preview.jpg");
+    }
+
+    #ib-new-dialog-preview.t4 {
+        background-image: url("/Content/InspirationBoard/template4-preview.jpg");
+    }

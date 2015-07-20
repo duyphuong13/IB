@@ -1,0 +1,636 @@
+.no-ib-for-user {
+    margin-bottom: 600px;
+}
+
+.addthis_toolbox {
+    width: 450px;
+}
+
+.icon-envelope, .icon-print {
+    color: #333;
+}
+
+#ib-create-new-board-box {
+    margin: 10px 0;
+}
+
+#ib-photo-preview {
+    position: absolute;
+    background-color: #CCC;
+    padding: 10px;
+    z-index: 2;
+}
+
+    #ib-photo-preview img {
+        width: 300px;
+    }
+
+.source-img {
+    width: 64px;
+    height: 64px;
+    margin: 0 5px;
+    z-index: 2;
+    cursor: move;
+}
+
+.ui-draggable-dragging {
+    cursor: move;
+}
+
+#ib-boards .board {
+    text-align: center;
+    width: 225px;
+    height: 290px;
+    word-break: break-word;
+    overflow: hidden;
+    float: left;
+    margin: 6px;
+}
+
+    #ib-boards .board img {
+        height: 220px;
+        width: 220px;
+    }
+
+    #ib-boards .board .boardOld-true img {
+        border: 1px solid #dfdfdf;
+        height: 219px;
+        width: 219px;
+    }
+
+    #ib-boards .board .addthis_toolbox {
+        border: 1px solid #999;
+        background-color: white;
+        position: absolute;
+        display: none;
+    }
+
+        #ib-boards .board .addthis_toolbox a, #ib-boards .board .addthis_toolbox span.public-false {
+            clear: both;
+            display: block;
+            float: none;
+            margin: 5px;
+            text-align: left;
+            padding: 0 2px;
+        }
+
+        #ib-boards .board .addthis_toolbox span {
+            padding-left: 5px;
+        }
+
+#ib-new-dialog #ib-new-dialog-templates, #ib-edit-dialog #ib-new-dialog-templates, #ib-dialog-edit #ib-new-dialog-templates, #ib-dialog-upload #ib-new-dialog-templates {
+    text-align: center;
+}
+
+    #ib-new-dialog #ib-new-dialog-templates #choose-a-layout, #ib-edit-dialog #ib-new-dialog-templates #choose-a-layout, #ib-dialog-edit #ib-new-dialog-templates #choose-a-layout, #ib-dialog-upload #ib-new-dialog-templates #choose-a-layout {
+        margin-bottom: 10px;
+    }
+
+    #ib-new-dialog #ib-new-dialog-templates .strong, #ib-edit-dialog #ib-new-dialog-templates .strong, #ib-dialog-edit #ib-new-dialog-templates .strong, #ib-dialog-upload #ib-new-dialog-templates .strong {
+        padding-bottom: 3px;
+    }
+
+    #ib-new-dialog #ib-new-dialog-templates label, #ib-edit-dialog #ib-new-dialog-templates label, #ib-dialog-edit #ib-new-dialog-templates label, #ib-dialog-upload #ib-new-dialog-templates label {
+        display: inline-block;
+        width: 65px;
+        height: 50px;
+        margin-right: 10px;
+        vertical-align: top;
+        background-image: url("../images/wedding/inspirationboardNew/template-layouts.png");
+        background-repeat: no-repeat;
+        text-align: left;
+        min-width: 65px;
+    }
+
+ib-new-dialog-templates#ib-new-dialog-template1-label {
+    background-position: right 0;
+}
+
+.ib-new-dialog-templates#ib-new-dialog-template2-label{
+    background-position: right -60px;
+}
+
+.ib-new-dialog-templates#ib-new-dialog-template3-label{
+    background-position: right -120px;
+}
+
+.ib-new-dialog-templates#ib-new-dialog-template4-label{
+    background-position: right -180px;
+}
+
+#ib-new-dialog #ib-new-dialog-preview, #ib-edit-dialog #ib-new-dialog-preview, #ib-dialog-edit #ib-new-dialog-preview, #ib-dialog-upload #ib-new-dialog-preview {
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    margin: 10px auto !important;
+    padding-bottom: 156px;
+    width: 156px;
+}
+
+    #ib-new-dialog #ib-new-dialog-preview.t1, #ib-edit-dialog #ib-new-dialog-preview.t1, #ib-dialog-edit #ib-new-dialog-preview.t1, #ib-dialog-upload #ib-new-dialog-preview.t1 {
+        background-image: url("../images/wedding/inspirationboardNew/template1-preview.jpg");
+    }
+
+    #ib-new-dialog #ib-new-dialog-preview.t2, #ib-edit-dialog #ib-new-dialog-preview.t2, #ib-dialog-edit #ib-new-dialog-preview.t2, #ib-dialog-upload #ib-new-dialog-preview.t2 {
+        background-image: url("../images/wedding/inspirationboardNew/template2-preview.jpg");
+    }
+
+    #ib-new-dialog #ib-new-dialog-preview.t3, #ib-edit-dialog #ib-new-dialog-preview.t3, #ib-dialog-edit #ib-new-dialog-preview.t3, #ib-dialog-upload #ib-new-dialog-preview.t3 {
+        background-image: url("../images/wedding/inspirationboardNew/template3-preview.jpg");
+    }
+
+    #ib-new-dialog #ib-new-dialog-preview.t4, #ib-edit-dialog #ib-new-dialog-preview.t4, #ib-dialog-edit #ib-new-dialog-preview.t4, #ib-dialog-upload #ib-new-dialog-preview.t4 {
+        background-image: url("../images/wedding/inspirationboardNew/template4-preview.jpg");
+    }
+
+#ib-new-dialog .ib-new-dialog-col1, #ib-edit-dialog .ib-new-dialog-col1, #ib-dialog-edit .ib-new-dialog-col1, #ib-dialog-upload .ib-new-dialog-col1 {
+    margin: 10px 0;
+}
+
+#ib-new-dialog .ib-new-dialog-col2, #ib-edit-dialog .ib-new-dialog-col2, #ib-dialog-edit .ib-new-dialog-col2, #ib-dialog-upload .ib-new-dialog-col2 {
+    margin: 10px 0;
+}
+
+    #ib-new-dialog .ib-new-dialog-col2 label, #ib-edit-dialog .ib-new-dialog-col2 label, #ib-dialog-edit .ib-new-dialog-col2 label, #ib-dialog-upload .ib-new-dialog-col2 label {
+        line-height: 22px;
+    }
+
+#ib-new-dialog #ib-new-dialog-buttons, #ib-edit-dialog #ib-new-dialog-buttons, #ib-dialog-edit #ib-new-dialog-buttons, #ib-dialog-upload #ib-new-dialog-buttons {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#ib-embed-dialog #ib-embed-dialog-preview {
+    background-position: right center;
+    background-repeat: no-repeat;
+    margin-right: 15px;
+    min-height: 250px;
+}
+
+    #ib-embed-dialog #ib-embed-dialog-preview textarea, #ib-embed-dialog #ib-embed-dialog-preview select {
+        width: 220px;
+    }
+
+    #ib-embed-dialog #ib-embed-dialog-preview textarea {
+        height: 130px;
+    }
+
+    #ib-embed-dialog #ib-embed-dialog-preview div {
+        padding-top: 8px;
+    }
+
+#ib-embed-dialog .saved .yellowBox {
+    display: none;
+}
+
+#ib-embed-dialog .yellowBox {
+    margin-top: 10px;
+}
+
+#ib-embed-dialog #ib-new-dialog-buttons {
+    text-align: center;
+}
+
+#ib-new-dialog-buttons {
+    text-align: center;
+}
+
+#ib-header {
+    margin-top: 10px;
+}
+
+#ib-nav-bar {
+    margin-top: 20px;
+}
+
+    #ib-nav-bar #photo-add, #ib-nav-bar #photo-upload {
+        float: left;
+        line-height: 43px;
+        margin-right: 15px;
+    }
+
+    #ib-nav-bar #photo-add {
+        color: #999;
+    }
+
+    #ib-nav-bar #photo-upload {
+        margin-left: 30px;
+    }
+
+    #ib-nav-bar #ib-switch-boards {
+        float: right;
+        line-height: 43px;
+    }
+
+#ib-photo-strip .ib-nav-sub-bar {
+    font-size: 11px;
+    line-height: 1.4em;
+    color: #999;
+    line-height: 20px;
+}
+
+    #ib-photo-strip .ib-nav-sub-bar #ib-photo-strip-header-gallery, #ib-photo-strip .ib-nav-sub-bar #ib-photo-strip-header-my {
+        float: left;
+    }
+
+    #ib-photo-strip .ib-nav-sub-bar #ib-photo-strip-header-count {
+        float: right;
+    }
+
+#ib-photo-strip #ib-photo-strip-images {
+    margin-top: 10px;
+}
+
+    #ib-photo-strip #ib-photo-strip-images #ib-photo-strip-images-imgs {
+        padding-left: 65px;
+        white-space: nowrap;
+    }
+
+    #ib-photo-strip #ib-photo-strip-images a.arrow {
+        font-weight: bold;
+        display: block;
+        padding: 6px 3px;
+        color: #ffac5a;
+        text-align: center;
+        text-decoration: none;
+        position: relative;
+    }
+
+        #ib-photo-strip #ib-photo-strip-images a.arrow:hover {
+            filter: alpha(opacity=80);
+            -moz-opacity: .80;
+            opacity: .80;
+        }
+
+    #ib-photo-strip #ib-photo-strip-images #ib-photo-strip-images-next, #ib-photo-strip #ib-photo-strip-images #ib-photo-strip-images-prev {
+        visibility: hidden;
+        font-size: 55px;
+        line-height: 52px;
+        cursor: pointer;
+    }
+
+    #ib-photo-strip #ib-photo-strip-images #ib-photo-strip-images-prev {
+        float: left;
+    }
+
+    #ib-photo-strip #ib-photo-strip-images #ib-photo-strip-images-next {
+        float: right;
+    }
+
+#ib-overall-controls-sharing-overview, .private-ib {
+    color: #cfcfcf;
+}
+
+#ib-overall-controls {
+    margin-top: 10px;
+    color: #ddd;
+    font-size: 14px;
+    line-height: 1.6em;
+}
+
+    #ib-overall-controls #ib-overall-controls-preview-private-tooltip {
+        color: #ddd;
+    }
+
+    #ib-overall-controls #ib-overall-controls-edit {
+        float: right;
+        padding: 5px 20px;
+    }
+
+        #ib-overall-controls #ib-overall-controls-edit #ib-overall-controls-preview {
+            margin-left: 10px;
+        }
+
+        #ib-overall-controls #ib-overall-controls-edit .btn-primary {
+            padding: 8px 15px;
+            color: #fff;
+        }
+
+            #ib-overall-controls #ib-overall-controls-edit .btn-primary.disabled {
+                background-color: #ddd;
+            }
+
+                #ib-overall-controls #ib-overall-controls-edit .btn-primary.disabled:hover {
+                    background-color: #999;
+                }
+
+    #ib-overall-controls #ib-overall-controls-sharing {
+        margin-left: 15px;
+        line-height: 47px;
+    }
+
+        #ib-overall-controls #ib-overall-controls-sharing .ib-actions {
+            margin-right: 15px;
+        }
+
+        #ib-overall-controls #ib-overall-controls-sharing .icon-facebook-sign {
+            color: #3B5998;
+        }
+
+        #ib-overall-controls #ib-overall-controls-sharing .icon-twitter {
+            color: #4099FF;
+        }
+
+#ib-overall-controls, #ib-main-container {
+    border: 1px solid #ddd;
+}
+
+#ib-main-container {
+    border-top: none;
+    padding: 25px;
+    background-color: #eee;
+}
+
+#ib-main {
+    width: 750px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+    #ib-main #ib-container {
+        font-size: 13px;
+        line-height: 1.6em;
+        behavior: url(/localStatic/PIE.htc);
+        float: left;
+        height: auto;
+        width: auto;
+    }
+
+        #ib-main #ib-container .divider {
+            background: #CCC;
+            float: left;
+            overflow: hidden;
+        }
+
+            #ib-main #ib-container .divider.hover {
+                background: #88F;
+            }
+
+        #ib-main #ib-container .ib-cell {
+            float: left;
+            overflow: hidden;
+        }
+
+        #ib-main #ib-container .msg {
+            margin: auto;
+            padding: 5px;
+            text-align: center;
+        }
+
+#ib-back-link {
+    margin: 15px 0;
+}
+
+#ib-boards .addthis_toolbox .public-true .public-false {
+    display: none !important;
+}
+
+#ib-boards .addthis_toolbox .public-false .public-true {
+    display: none !important;
+}
+
+#ib-boards .addthis_toolbox span.public-false {
+    display: none !important;
+}
+
+.addthis_default_style .addthis_separator, .addthis_default_style .at300b, .addthis_default_style .at300bo, .addthis_default_style .at300m, .addthis_default_style .at300bs {
+    float: inherit !important;
+}
+
+#ib-new-dialog-full, #W_Tools_Inspiration_New #at_email #at16meo, #ib-overall-controls-sharing .addthis_button_print, #ib-preview-print, #ib-boards .public-true .public-false, #ib-boards .public-false .public-true, #ib-boards .ready-true .ready-false, #ib-boards .ready-false .ready-true, #ib-overall-controls.ready-false.public-false .public-false, #ib-overall-controls.ready-true .ready-false, #ib-overall-controls.public-true .public-false, #ib-overall-controls.ready-false.public-true .ready-true, #ib-overall-controls.ready-false.public-false .ready-true, #ib-overall-controls.ready-true.public-true .public-false, #ib-overall-controls.ready-true.public-false .public-true, #ib-overall-controls.ready-true .public.ready-false, #ib-dialog-upload, #ib-dialog-edit, #ib-embed-dialog, #ib-edit-dialog, #ib-new-dialog, #ib-dialog-started, #ib-photo-strip.loaded #ib-photo-strip-loading, #ib-photo-strip.loading #ib-photo-strip-images, #ib-photo-strip.loading #ib-photo-strip-header-count, #ib-nav.my #ib-photo-strip-header-gallery, #ib-nav.gallery #ib-photo-strip-header-my, #ib-photo-strip-header-my.used span.ib-photo-my-all, #ib-photo-strip-header-my.used a.ib-photo-my-used, #ib-photo-strip-header-my.all a.ib-photo-my-all, #ib-photo-strip-header-my.all span.ib-photo-my-used, #ib-nav.my .ib-nav-gallery.selected, #ib-nav.my .ib-nav-my.unselected, #ib-nav.gallery .ib-nav-gallery.unselected, #ib-nav.gallery .ib-nav-my.selected {
+    display: none;
+}
+
+a.addthis_button_facebook:before, a.addthis_button_twitter:before, a.addthis_button_email:before {
+    content: none !important;
+}
+
+#ib-modify-tags {
+    padding: 0 0 10px 0;
+    position: absolute;
+    border: none;
+    z-index: 1;
+    -webkit-box-shadow: 0 14px 20px 5px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 14px 20px 5px rgba(0,0,0,0.3);
+    box-shadow: 0 14px 20px 5px rgba(0,0,0,0.3);
+    visibility: hidden;
+}
+
+    #ib-modify-tags label, #ib-modify-tags .ib-detail-tag-labels {
+        text-transform: lowercase;
+    }
+
+    #ib-modify-tags .ib-detail-tag-labels {
+        padding-top: 5px;
+    }
+
+#ib-action-buttons {
+    text-align: center;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+#ib-detail-tag-labels {
+    padding: 0;
+    overflow: hidden;
+    width: 782px;
+    float: left;
+}
+
+    #ib-detail-tag-labels > div:first-child {
+        float: right;
+        padding-right: 10px;
+        margin-top: 5px;
+    }
+
+    #ib-detail-tag-labels .js-accordion-nav {
+        max-width: 130px;
+        margin: 5px 19px 0 5px;
+        float: left;
+    }
+
+        #ib-detail-tag-labels .js-accordion-nav div {
+            text-align: center;
+            background-color: #E2F6F4;
+        }
+
+            #ib-detail-tag-labels .js-accordion-nav div.js-active {
+                background: #fff;
+            }
+
+        #ib-detail-tag-labels .js-accordion-nav .js-ww-es-navsubitem {
+            padding: 8px;
+            width: 125px;
+        }
+
+    #ib-detail-tag-labels .js-accordion-data {
+        float: left;
+        width: 620px;
+        margin-top: 3px;
+    }
+
+        #ib-detail-tag-labels .js-accordion-data > .js-accordion:first-child {
+            display: block;
+        }
+
+        #ib-detail-tag-labels .js-accordion-data > .js-accordion .ui-accordion-header .ui-icon {
+            left: .3em;
+            top: 13px;
+        }
+
+        #ib-detail-tag-labels .js-accordion-data > .js-accordion .js-photoTag-column {
+            padding: 0 3px;
+            float: left;
+            margin: 0 3px;
+        }
+
+            #ib-detail-tag-labels .js-accordion-data > .js-accordion .js-photoTag-column.col1, #ib-detail-tag-labels .js-accordion-data > .js-accordion .js-photoTag-column.col2, #ib-detail-tag-labels .js-accordion-data > .js-accordion .js-photoTag-column.col3, #ib-detail-tag-labels .js-accordion-data > .js-accordion .js-photoTag-column.col4, #ib-detail-tag-labels .js-accordion-data > .js-accordion .js-photoTag-column.col5 {
+                margin: 0 10px 0 0;
+            }
+
+#ib-color-tag-labels, #ib-season-tag-labels, #ib-style-tag-labels, #ib-venue-tag-labels {
+    padding: 10px 0 0 0;
+    display: none;
+    float: left;
+}
+
+    #ib-color-tag-labels ul {
+        float: left;
+        padding: 0 10px 10px;
+    }
+
+#ib-controls {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+
+    #ib-controls .ui-button {
+        padding: 5px 20px;
+        margin-left: 10px;
+    }
+
+#ib-zoom-slider {
+    width: 150px;
+    margin: 10px auto;
+}
+
+#ib-controls-hover-drag, #ib-controls-hover {
+    background: #666;
+    border: 1px solid #333;
+    filter: alpha(opacity=80);
+    -moz-opacity: .80;
+    opacity: .80;
+    display: none;
+    width: 24px;
+    position: absolute;
+}
+
+.lightbox_bg {
+    background: #222 none repeat scroll 0 0;
+    height: 100%;
+    left: 0;
+    filter: alpha(opacity=80);
+    -moz-opacity: .80;
+    opacity: .80;
+    top: 0;
+    width: 100%;
+    position: absolute;
+    display: none;
+}
+
+#ib-controls-hover-drag, #ib-controls-hover {
+    background: #666;
+    border: 1px solid #333;
+    filter: alpha(opacity=80);
+    -moz-opacity: .80;
+    opacity: .80;
+    display: none;
+    width: 24px;
+    position: absolute;
+}
+
+.ib-cell-img-container {
+    position: relative;
+    overflow: hidden;
+}
+
+#ib-controls-hover img {
+    cursor: pointer;
+}
+
+#ib-controls-hover-drag {
+    cursor: move;
+}
+
+    #ib-controls-hover-drag img, #ib-controls-hover img {
+        width: 16px;
+        height: 16px;
+        display: block;
+        padding: 4px;
+    }
+
+        #ib-controls-hover-drag img:hover, #ib-controls-hover img:hover {
+            background: #eee;
+        }
+
+#ib-back-link {
+    clear: both;
+    padding-top: 10px;
+}
+
+#ib-photo-strip-loading img {
+    width: 35px;
+    height: 35px;
+    padding-right: 10px;
+    vertical-align: middle;
+}
+
+#image_clone {
+    position: absolute;
+}
+
+.bgWhite {
+    background-color: #FFF;
+}
+
+#ib-dialog-started .started-content {
+    padding: 0 10px;
+}
+
+#ib-dialog-started .strong {
+    font-weight: bold;
+}
+
+#ib-dialog-started .started-item {
+    background-repeat: no-repeat;
+    background-position: 0 12px;
+    padding: 10px 0 10px 50px;
+}
+
+    #ib-dialog-started .started-item.item1 {
+        margin-top: 5px;
+        background-image: url("../images/wedding/inspirationboardNew/iboards-tutorial-1.png");
+    }
+
+    #ib-dialog-started .started-item.item2 {
+        background-image: url("../images/wedding/inspirationboardNew/iboards-tutorial-2.png");
+    }
+
+    #ib-dialog-started .started-item.item3 {
+        background-image: url("../images/wedding/inspirationboardNew/iboards-tutorial-3.png");
+    }
+
+#ib-dialog-started label {
+    font-weight: normal;
+    margin: 20px 0;
+}
+
+#ib-dialog-upload_err {
+    color: #e74c3c;
+}
+
+#ib-overall-controls-print-fake {
+    cursor: pointer;
+}

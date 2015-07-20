@@ -1,0 +1,40 @@
+﻿<div id="modal_createNewBoard" class="modal fade">
+    <div class="modal-dialog" style="width: 400px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Create New Board</h4>
+            </div>
+            <div class="modal-body">
+                <div role="form">
+
+                    <label>Choose a layout:</label>
+                    <form class="form-group" style="text-align:center">
+                        <input type="radio" name="template" data-bind="checked: boardTemplate" value="1" id="ib-new-dialog-template1" checked="checked" />
+                        <label for="ib-new-dialog-template1" id="ib-new-dialog-template1-label" class="ib-new-dialog-templates">&nbsp;</label>
+                        <input type="radio" name="template" data-bind="checked: boardTemplate" value="2" id="ib-new-dialog-template2" />
+                        <label for="ib-new-dialog-template2" id="ib-new-dialog-template2-label" class="ib-new-dialog-templates">&nbsp;</label>
+                        <input type="radio" name="template" data-bind="checked: boardTemplate" value="3" id="ib-new-dialog-template3" />
+                        <label for="ib-new-dialog-template3" id="ib-new-dialog-template3-label" class="ib-new-dialog-templates">&nbsp;</label>
+                        <input type="radio" name="template" data-bind="checked: boardTemplate" value="4" id="ib-new-dialog-template4" />
+                        <label for="ib-new-dialog-template4" id="ib-new-dialog-template4-label" class="ib-new-dialog-templates">&nbsp;</label>
+                        <div id="ib-new-dialog-preview" class="t1">Preview:</div>
+                    </form>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">Name:</label>
+                        <input type="text" class="form-control" id="recipient-name" style="width:240px" data-bind="value: title" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="control-label">Comment:</label>
+                        <textarea class="form-control" id="message-text" style="width:240px" data-bind="value: description"></textarea>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" data-bind="click: SaveCreateBoard">Submit</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
